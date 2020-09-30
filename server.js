@@ -1,6 +1,7 @@
 const express = require('express');
 const logger = require('./middleware/logger')
 const userRouter = require('./users/userRouter')
+const postsRouter = require('./posts/postRouter')
 const server = express();
 
 
@@ -12,7 +13,7 @@ server.get('/', (req, res) => {
 });
 
 server.use('/api/users', userRouter)
-
+server.use('/api/posts', postsRouter)
 
 //custom middleware
 
